@@ -12,11 +12,11 @@ _NOTE_C4 = 262
 class Piezo:
 
     def __init__(self):
-        self.GPIO = GPIO        
-        self.GPIO.setwarnings(False)        # prevent warnings
-        self.GPIO.setmode(GPIO.BOARD)       # setup I/O
-        self.GPIO.setup(7, GPIO.OUT)        # sets pin 7 to output
-        self.pwn = self.GPIO.PWM(7, 100)    # variable for pin 7 with frequency
+        #self.GPIO = GPIO        
+        GPIO.setwarnings(False)        # prevent warnings
+        GPIO.setmode(GPIO.BOARD)       # setup I/O
+        GPIO.setup(7, GPIO.OUT)        # sets pin 7 to output
+        self.pwn = GPIO.PWM(7, 100)    # variable for pin 7 with frequency
 
     def play(self):
         
@@ -65,7 +65,7 @@ class Piezo:
 
 def main():
     # Testing purpose 
-    piezo = Piezo(GPIO)
+    piezo = Piezo()
     while(True):
         cin = str(input(">"))
         if (cin == '1'):
