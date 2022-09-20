@@ -31,7 +31,7 @@ class MySubscribeCallback(SubscribeCallback):
             # Connect event. You can do stuff like publish, and know you'll get it.
             # Or just use the connected event to confirm you are subscribed for
             # UI / internal notifications, etc
-            pubnub.publish().channel('my_channel').message('Hello world!').pn_async(my_publish_callback)
+            pubnub.publish().channel('taco_channel').message('Hello world!').pn_async(my_publish_callback)
         elif status.category == PNStatusCategory.PNReconnectedCategory:
             pass
             # Happens as part of our regular operation. This event happens when
@@ -46,4 +46,4 @@ class MySubscribeCallback(SubscribeCallback):
         print(message.message)
 
 pubnub.add_listener(MySubscribeCallback())
-pubnub.subscribe().channels('my_channel').execute()
+pubnub.subscribe().channels('taco_channel').execute()
