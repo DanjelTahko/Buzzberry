@@ -11,8 +11,7 @@ _NOTE_C4 = 262
 
 class Piezo:
 
-    def __init__(self):
-        #self.GPIO = GPIO        
+    def __init__(self):   
         GPIO.setwarnings(False)        # prevent warnings
         GPIO.setmode(GPIO.BOARD)       # setup I/O
         GPIO.setup(7, GPIO.OUT)        # sets pin 7 to output
