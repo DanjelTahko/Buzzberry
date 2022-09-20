@@ -3,7 +3,8 @@ from pubnub.enums import PNReconnectionPolicy
 from pubnub.pubnub import PubNub
 
 from subscriber import SubscribeHandler
-from key_config import *
+#from key_config import *
+from raspberry_keys import *
 
 def run():
     
