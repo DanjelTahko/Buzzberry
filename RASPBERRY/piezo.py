@@ -9,6 +9,20 @@ _NOTE_F3 = 175
 _NOTE_A3 = 220
 _NOTE_C4 = 262
 
+__NOTE_E5 = 659 
+_NOTE_C5 = 523
+_NOTE_G5  = 784
+_NOTE_G4 = 392
+_NOTE_E4 = 330
+_NOTE_A4 =  440
+_NOTE_B4 = 494
+
+
+_NOTE_AS4 = 466 # Bb4
+
+
+# mario = [E5, E5, E5, C5, E5, G5, G4, C5, G4, E4, A4, B4, Bb4, A4]
+
 class Piezo:
 
     def __init__(self):   
@@ -16,6 +30,8 @@ class Piezo:
         GPIO.setmode(GPIO.BOARD)       # setup I/O
         GPIO.setup(7, GPIO.OUT)        # sets pin 7 to output
         self.pwn = GPIO.PWM(7, 100)    # variable for pin 7 with frequency
+
+    
 
     def play(self):
         
