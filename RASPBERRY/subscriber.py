@@ -2,7 +2,6 @@ from pubnub.callbacks import SubscribeCallback
 from pubnub.enums import PNStatusCategory, PNOperationType
 from pubnub.pnconfiguration import PNConfiguration
 from pubnub.pubnub import PubNub
-
 from piezo import Piezo
 PIEZO = Piezo()
 
@@ -13,8 +12,11 @@ class SubscribeHandler(SubscribeCallback):
         print("Message subscription: %s" % message.subscription)
         print("Message timetoken: %s" % message.timetoken)
         print("Message payload: %s" % message.message)
+        print(type(message.message))
+        msg = message.message['msg']
+        print(type(msg))
         print("Message publisher: %s" % message.publisher)
-        PIEZO.play(message.message)
+        PIEZO.play(msg)
 
     def presence(self, pubnub, presence):
         # Can be join, leave, state-change, timeout, or interval
