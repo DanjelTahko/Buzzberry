@@ -14,7 +14,7 @@ class SubscribeHandler(SubscribeCallback):
         print("Message timetoken: %s" % message.timetoken)
         print("Message payload: %s" % message.message)
         print("Message publisher: %s" % message.publisher)
-        PIEZO.play()
+        PIEZO.play(message.message)
 
     def presence(self, pubnub, presence):
         # Can be join, leave, state-change, timeout, or interval

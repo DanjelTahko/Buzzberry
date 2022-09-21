@@ -30,57 +30,57 @@ class Piezo:
         GPIO.setmode(GPIO.BOARD)       # setup I/O
         GPIO.setup(7, GPIO.OUT)        # sets pin 7 to output
         self.pwm = GPIO.PWM(7, 100)    # variable for pin 7 with frequency
-
+    
     def play_mario(self):
-       
-       self.pwm.start(50) # Start Mario
-       
-       self.pwm.ChangeFrequency(_NOTE_E5)
-       sleep(0.10)
-       self.pause()
 
-       self.pwm.ChangeFrequency(_NOTE_E5)
-       sleep(0.15)
-       self.pause()
-       
-       self.pwm.ChangeFrequency(_NOTE_E5)
-       sleep(0.15)
-       self.pause() 
+        self.pwm.start(50) # Start Mario
 
-       self.pwm.ChangeFrequency(_NOTE_C5)
-       sleep(0.10)
-       self.pwm.ChangeFrequency(_NOTE_E5)
-       sleep(0.20)
+        self.pwm.ChangeFrequency(_NOTE_E5)
+        sleep(0.10)
+        self.pause()
 
-       # --------------------
-       self.pwm.ChangeFrequency(_NOTE_G5)
-       sleep(0.5)
+        self.pwm.ChangeFrequency(_NOTE_E5)
+        sleep(0.15)
+        self.pause()
+        
+        self.pwm.ChangeFrequency(_NOTE_E5)
+        sleep(0.15)
+        self.pause() 
 
-       self.pwm.ChangeFrequency(_NOTE_G4)
-       sleep(0.4)
-       self.pause()
-       
-       # ---------------------
-       self.pwm.ChangeFrequency(_NOTE_C5)
-       sleep(0.33)
-       self.pwm.ChangeFrequency(_NOTE_G4)
-       sleep(0.33)
-       self.pwm.ChangeFrequency(_NOTE_E4)
-       sleep(0.33)
-       # ---------------------
-       self.pwm.ChangeFrequency(_NOTE_A4)
-       sleep(0.20)
-       self.pause()
-       self.pwm.ChangeFrequency(_NOTE_B4)
-       sleep(0.20)
-       self.pause()
-       self.pwm.ChangeFrequency(_NOTE_AS4)
-       sleep(0.10)
-       self.pause()
-       self.pwm.ChangeFrequency(_NOTE_A4)
-       sleep(0.20)
-       
-       self.pwm.stop()
+        self.pwm.ChangeFrequency(_NOTE_C5)
+        sleep(0.10)
+        self.pwm.ChangeFrequency(_NOTE_E5)
+        sleep(0.20)
+
+        # --------------------
+        self.pwm.ChangeFrequency(_NOTE_G5)
+        sleep(0.5)
+
+        self.pwm.ChangeFrequency(_NOTE_G4)
+        sleep(0.4)
+        self.pause()
+        
+        # ---------------------
+        self.pwm.ChangeFrequency(_NOTE_C5)
+        sleep(0.33)
+        self.pwm.ChangeFrequency(_NOTE_G4)
+        sleep(0.33)
+        self.pwm.ChangeFrequency(_NOTE_E4)
+        sleep(0.33)
+        # ---------------------
+        self.pwm.ChangeFrequency(_NOTE_A4)
+        sleep(0.20)
+        self.pause()
+        self.pwm.ChangeFrequency(_NOTE_B4)
+        sleep(0.20)
+        self.pause()
+        self.pwm.ChangeFrequency(_NOTE_AS4)
+        sleep(0.10)
+        self.pause()
+        self.pwm.ChangeFrequency(_NOTE_A4)
+        sleep(0.20)
+        
+        self.pwm.stop()
 
     def play_starwars(self):
         
@@ -133,10 +133,11 @@ class Piezo:
             self.play_mario()
         elif (message == 'icecream'):
             # self.play_icecream()
+            pass
 
     
 
-"""
+
 def main():
     # Testing purpose 
     piezo = Piezo()
@@ -150,7 +151,7 @@ def main():
             break
     
 if __name__ == "__main__":
-     main()
+    main()
      
-"""
+
 
