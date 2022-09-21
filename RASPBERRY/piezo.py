@@ -120,57 +120,63 @@ class Piezo:
 
     def play_icecream(self):
 
-        self.pwn.start(50) # Start imperial march
+        self.pwm.start(50) # Start icecreamcar
+        
+        # --------------------------------
+        self.pwm.ChangeFrequency(_NOTE_C4)
+        sleep(0.20)
+    
+        self.pwm.ChangeFrequency(_NOTE_E4)
+        sleep(0.20)
 
-        self.pwn.ChangeFrequency(_NOTE_G4)
-        sleep(0.4)
+        self.pwm.ChangeFrequency(_NOTE_G4)
+        sleep(0.20)
 
-        self.pwn.ChangeFrequency(_NOTE_C4)
-        sleep(0.4)
+        self.pwm.ChangeFrequency(_NOTE_E4)
+        sleep(0.25)
+        
+        self.pwm.ChangeFrequency(_NOTE_C4)
+        sleep(0.20)
+        self.pause()
+        # -------------------------------
+        self.pwm.ChangeFrequency(_NOTE_C4)
+        sleep(0.20)
 
-        self.pwn.ChangeFrequency(_NOTE_E4)
-        sleep(0.4)
+        self.pwm.ChangeFrequency(_NOTE_E4)
+        sleep(0.20)
 
-        self.pwn.ChangeFrequency(_NOTE_C4)
-        sleep(0.4)
+        self.pwm.ChangeFrequency(_NOTE_G4)
+        sleep(0.20)
 
-        self.pwn.ChangeFrequency(_NOTE_G4)
+        self.pwm.ChangeFrequency(_NOTE_E4)
+        sleep(0.25)
+        
+        self.pwm.ChangeFrequency(_NOTE_C4)
+        sleep(0.2)
+        self.pause()
+        # --------------------------------
+        self.pwm.ChangeFrequency(_NOTE_A3)
+        sleep(0.2)
+        
+        self.pwm.ChangeFrequency(_NOTE_F4)
+        sleep(0.2)
+        self.pause()
+
+        self.pwm.ChangeFrequency(_NOTE_F4)
+        sleep(0.2)
+        
+        self.pwm.ChangeFrequency(_NOTE_D4)
+        sleep(0.2)
+        self.pause()
+        
+        self.pwm.ChangeFrequency(_NOTE_D4)
+        sleep(0.2)
+
+        # --------------------------------
+        self.pwm.ChangeFrequency(_NOTE_C4)
         sleep(1)
-        self.pause()
-        #---------------------------------
-        self.pwn.ChangeFrequency(_NOTE_G4)
-        sleep(0.4)
 
-        self.pwn.ChangeFrequency(_NOTE_C4)
-        sleep(0.4)
-
-        self.pwn.ChangeFrequency(_NOTE_E4)
-        sleep(0.4)
-
-        self.pwn.ChangeFrequency(_NOTE_C4)
-        sleep(0.4)
-
-        self.pwn.ChangeFrequency(_NOTE_G4)
-        sleep(1)
-        self.pause()
-        #---------------------------------
-        self.pwn.ChangeFrequency(_NOTE_G4)
-        sleep(0.4)
-        self.pwn.ChangeFrequency(_NOTE_F4)
-        sleep(0.4)
-        self.pause()
-        #---------------------------------
-        self.pwn.ChangeFrequency(_NOTE_F4)
-        sleep(0.4)
-        self.pwn.ChangeFrequency(_NOTE_D4)
-        sleep(0.4)
-        self.pause()
-        #---------------------------------
-        self.pwn.ChangeFrequency(_NOTE_D4)
-        sleep(0.4)
-        self.pwn.ChangeFrequency(_NOTE_C4)
-        sleep(0.4)
-        self.pwn.stop()
+        self.pwm.stop()
 
 
     def pause(self):
@@ -201,7 +207,7 @@ def main():
             piezo.play_mario()
         elif (cin == '2'):
             piezo.play_starwars()
-        elif (cin == '2'):
+        elif (cin == '3'):
             piezo.play_icecream()
         elif (cin == 'q'):
             break
