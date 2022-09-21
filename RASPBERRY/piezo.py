@@ -8,7 +8,6 @@ from time import sleep
 _NOTE_F3 = 175
 _NOTE_A3 = 220
 _NOTE_C4 = 262
-
 _NOTE_E5 = 659 
 _NOTE_C5 = 523
 _NOTE_G5 = 784
@@ -16,9 +15,10 @@ _NOTE_G4 = 392
 _NOTE_E4 = 330
 _NOTE_A4 = 440
 _NOTE_B4 = 494
-
-
 _NOTE_AS4 = 466 # Bb4
+_NOTE_E4 = 329
+_NOTE_F4 = 349
+_NOTE_D4 = 293
 
 
 # mario = [E5, E5, E5, C5, E5, G5, G4, C5, G4, E4, A4, B4, Bb4, A4]
@@ -118,6 +118,60 @@ class Piezo:
 
         self.pwm.stop()
 
+    def play_icecream(self):
+
+        self.pwn.start(50) # Start imperial march
+
+        self.pwn.ChangeFrequency(_NOTE_G4)
+        sleep(0.4)
+
+        self.pwn.ChangeFrequency(_NOTE_C4)
+        sleep(0.4)
+
+        self.pwn.ChangeFrequency(_NOTE_E4)
+        sleep(0.4)
+
+        self.pwn.ChangeFrequency(_NOTE_C4)
+        sleep(0.4)
+
+        self.pwn.ChangeFrequency(_NOTE_G4)
+        sleep(1)
+        self.pause()
+        #---------------------------------
+        self.pwn.ChangeFrequency(_NOTE_G4)
+        sleep(0.4)
+
+        self.pwn.ChangeFrequency(_NOTE_C4)
+        sleep(0.4)
+
+        self.pwn.ChangeFrequency(_NOTE_E4)
+        sleep(0.4)
+
+        self.pwn.ChangeFrequency(_NOTE_C4)
+        sleep(0.4)
+
+        self.pwn.ChangeFrequency(_NOTE_G4)
+        sleep(1)
+        self.pause()
+        #---------------------------------
+        self.pwn.ChangeFrequency(_NOTE_G4)
+        sleep(0.4)
+        self.pwn.ChangeFrequency(_NOTE_F4)
+        sleep(0.4)
+        self.pause()
+        #---------------------------------
+        self.pwn.ChangeFrequency(_NOTE_F4)
+        sleep(0.4)
+        self.pwn.ChangeFrequency(_NOTE_D4)
+        sleep(0.4)
+        self.pause()
+        #---------------------------------
+        self.pwn.ChangeFrequency(_NOTE_D4)
+        sleep(0.4)
+        self.pwn.ChangeFrequency(_NOTE_C4)
+        sleep(0.4)
+        self.pwn.stop()
+
 
     def pause(self):
         self.pwm.stop()
@@ -127,13 +181,13 @@ class Piezo:
 
     def play(self, message):
 
-        if (message == 'starwars'):
-            self.play_starwars()
-        elif (message == 'mario'):
+        if (message == 'mario'):
             self.play_mario()
+        elif (message == 'starwars'):
+            self.play_starwars()
         elif (message == 'icecream'):
-            # self.play_icecream()
-            pass
+            self.play_icecream()
+            
 
     
 
@@ -146,7 +200,9 @@ def main():
         if (cin == '1'):
             piezo.play_mario()
         elif (cin == '2'):
-            piezo.play()
+            piezo.play_starwars()
+        elif (cin == '2'):
+            piezo.play_icecream()
         elif (cin == 'q'):
             break
     
