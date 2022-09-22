@@ -11,7 +11,7 @@ def run():
     # sleep before starting to configure
     _time = time.time()
     delay = 10
-    while(true):
+    while(True):
         # sleeping
         if(time.time()-_time > delay):
             break
