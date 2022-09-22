@@ -1,15 +1,21 @@
 from pubnub.pnconfiguration import PNConfiguration
 from pubnub.enums import PNReconnectionPolicy
 from pubnub.pubnub import PubNub
-from time import sleep
+from time
 from subscriber import SubscribeHandler
 #from key_config import *
 from raspberry_keys import *
 
 def run():
     
-    # Wait for wifi connection
-    sleep(10)
+    # sleep before starting to configure
+    _time = time.time()
+    delay = 10
+    while(true):
+        # sleeping
+        if(time.time()-_time > delay):
+            break
+
     pnconfig = PNConfiguration()
     # Subscribe key for connection 
     pnconfig.subscribe_key = SUB_KEY
