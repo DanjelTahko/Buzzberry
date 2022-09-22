@@ -1,7 +1,7 @@
 from pubnub.pnconfiguration import PNConfiguration
 from pubnub.enums import PNReconnectionPolicy
 from pubnub.pubnub import PubNub
-from time
+import time
 from subscriber import SubscribeHandler
 #from key_config import *
 from raspberry_keys import *
